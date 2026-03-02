@@ -1,0 +1,25 @@
+{
+  "name": "@doctor.com/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@better-auth/expo": "catalog:",
+    "@doctor.com/db": "workspace:*",
+    "@doctor.com/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@doctor.com/config": "workspace:*",
+    "typescript": "catalog:"
+  }
+}

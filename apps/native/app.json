@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "scheme": "doctor.com",
+    "userInterfaceStyle": "automatic",
+    "orientation": "default",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "doctor.com",
+    "slug": "doctor.com",
+    "plugins": ["expo-font"],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

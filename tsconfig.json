@@ -1,0 +1,3 @@
+{
+  "extends": "@doctor.com/config/tsconfig.base.json"
+}
