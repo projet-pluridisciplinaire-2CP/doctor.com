@@ -1,39 +1,30 @@
-import { createContext } from "@doctor.com/api/context";
-import { appRouter } from "@doctor.com/api/routers/index";
-import { auth } from "@doctor.com/auth";
-import { env } from "@doctor.com/env/server";
-import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import { toNodeHandler } from "better-auth/node";
-import cors from "cors";
+import "dotenv/config";
+
 import express from "express";
+import { createExpressMiddleware } from "@trpc/server/adapters/express";
 
-const app = express();
+import { createTRPCContext } from "./trpc/context";
+import { appRouter } from "./trpc/router";
 
-app.use(
-  cors({
-    origin: env.CORS_ORIGIN,
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  }),
-);
+const app: express.Express = express();
+const port = Number(process.env.PORT ?? 3000);
 
-app.all("/api/auth{/*path}", toNodeHandler(auth));
+app.use(express.json());
 
 app.use(
   "/trpc",
   createExpressMiddleware({
     router: appRouter,
-    createContext,
+    createContext: createTRPCContext,
   }),
 );
 
-app.use(express.json());
-
 app.get("/", (_req, res) => {
-  res.status(200).send("OK");
+  res.status(200).send("server running");
 });
 
-app.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+app.listen(port, () => {
+  console.log(`server running on http://localhost:${port}`);
 });
+
+export { app };
