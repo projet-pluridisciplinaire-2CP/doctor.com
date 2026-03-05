@@ -25,7 +25,8 @@
     "check-types": "tsc -b",
     "db:generate": "drizzle-kit generate --config ./src/infrastructure/db/drizzle.config.ts",
     "db:migrate": "drizzle-kit migrate --config ./src/infrastructure/db/drizzle.config.ts",
-    "dev": "bun --watch src/index.ts"
+    "dev": "bun src/index.ts",
+    "dev:watch": "bun --watch src/index.ts"
   },
   "dependencies": {
     "@trpc/server": "catalog:",
