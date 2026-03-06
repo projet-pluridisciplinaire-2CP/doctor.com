@@ -7,7 +7,7 @@ import {
   lettre_orientation_urgence_values,
   rendez_vous_statut_values,
   utilisateur_role_values,
-} from "../../infrastructure/db/schema";
+} from "@doctor.com/db/schema";
 
 const isoDateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const isoDateTimeRegex =

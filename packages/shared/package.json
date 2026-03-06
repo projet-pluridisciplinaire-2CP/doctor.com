@@ -1,12 +1,19 @@
 {
-  "name": "@doctor.com/auth",
+  "name": "@doctor.com/shared",
+  "private": true,
   "type": "module",
   "exports": {
     ".": {
       "default": "./src/index.ts"
     },
-    "./*": {
-      "default": "./src/*.ts"
+    "./schemas": {
+      "default": "./src/schemas/index.ts"
+    },
+    "./types": {
+      "default": "./src/types/index.ts"
+    },
+    "./errors": {
+      "default": "./src/errors/index.ts"
     }
   },
   "scripts": {
@@ -14,10 +21,8 @@
     "check-types": "tsc -b"
   },
   "dependencies": {
-    "@better-auth/expo": "catalog:",
     "@doctor.com/db": "workspace:*",
-    "@doctor.com/env": "workspace:*",
-    "better-auth": "catalog:",
+    "drizzle-orm": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {

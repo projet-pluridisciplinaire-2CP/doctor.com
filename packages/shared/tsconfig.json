@@ -1,8 +1,8 @@
 {
   "extends": "@doctor.com/config/tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "dist",
     "composite": true,
+    "outDir": "dist",
     "rootDir": "src"
   },
   "include": ["src/**/*.ts"]

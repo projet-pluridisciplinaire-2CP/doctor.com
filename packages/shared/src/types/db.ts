@@ -22,7 +22,7 @@ import {
   utilisateurs,
   vaccinations_patient,
   voyages_recents,
-} from "../../infrastructure/db/schema";
+} from "@doctor.com/db/schema";
 
 export type Utilisateur = InferSelectModel<typeof utilisateurs>;
 export type NewUtilisateur = InferInsertModel<typeof utilisateurs>;
